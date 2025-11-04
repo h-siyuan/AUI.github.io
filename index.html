@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="Video-Language Understanding, Large Language Models">
-  <meta name="description" content="VideoMind is a multi-modal chain-of-LoRA agent for long video reasoning.">
+  <meta name="keywords" content="Automatic GUI Design, Computer-Use Agents, AUI, Benchmark">
+  <meta name="description" content="AUI introduces agent-centric UI design with Coder–CUA collaboration and the AUI-Gym benchmark.">
 
-  <title>VideoMind: A Chain-of-LoRA Agent for Long Video Reasoning</title>
+  <title>AUI: Computer-Use Agents as Judges for Automatic GUI Design</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5C9M7TXSHJ"></script>
   <script>
@@ -33,19 +33,28 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <img class="logo" src="assets/logo.png" alt="logo">
+          <img class="logo" src="assets/logo.png" alt="AUI logo">
           <h1 class="title publication-title is-bold">
-            <span>VideoMind: A Chain-of-LoRA Agent for Long Video Reasoning</span>
+            <span>AUI: Computer-Use Agents as Judges for Automatic GUI Design</span>
           </h1>
           <div class="is-size-5 publication-author">
             <span class="author-block">
-              <a href="https://yeliu.dev/" target="_blank">Ye Liu</a><sup>1&dagger;</sup>,
+              <a href="https://qhlin.me/" target="_blank">Kevin Qinghong Lin</a><sup>1&dagger;&#9993;</sup>,
             </span>
             <span class="author-block">
-              <a href="https://qhlin.me/" target="_blank">Kevin Qinghong Lin</a><sup>2&dagger;</sup>,
+              <a href="https://siyuanhu.com/" target="_blank">Siyuan Hu</a><sup>2&dagger;</sup>,
             </span>
             <span class="author-block">
-              <a href="https://web.comp.polyu.edu.hk/chencw/" target="_blank">Chang Wen Chen</a><sup>1&#9993;</sup>,
+              <a href="https://www.microsoft.com/en-us/research/people/linjieli/" target="_blank">Linjie Li</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/zhengyang/" target="_blank">Zhengyuan Yang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/lijuanw/" target="_blank">Lijuan Wang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.robots.ox.ac.uk/~phst/" target="_blank">Philip Torr</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://sites.google.com/view/showlab" target="_blank">Mike Zheng Shou</a><sup>2&#9993;</sup>
@@ -53,8 +62,9 @@
           </div>
 
           <div class="is-size-5 publication-institution">
-            <span class="author-block"><sup>1</sup>The Hong Kong Polytechnic University</span>
+            <span class="author-block"><sup>1</sup>University of Oxford</span>
             <span class="author-block"><sup>2</sup>Show Lab, National University of Singapore</span>
+            <span class="author-block"><sup>3</sup>Microsoft</span>
           </div>
 
           <div class="is-size-5 publication-role">
@@ -65,33 +75,27 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a class="button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2503.13444" target="_blank">
+                <a class="button is-normal is-rounded is-dark" href="#" aria-disabled="true" onclick="return false;">
                   <i class="button-icon far fa-paper-plane"></i>
-                  <span>arXiv</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a class="button is-normal is-rounded is-dark" href="https://github.com/yeliudev/VideoMind" target="_blank">
+                <a class="button is-normal is-rounded is-dark" href="https://github.com/showlab/AUI" target="_blank">
                   <i class="button-icon fa-brands fa-github"></i>
                   <span>Code</span>
                 </a>
               </span>
               <span class="link-block">
-                <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/spaces/yeliudev/VideoMind-2B" target="_blank">
-                  <i class="button-icon fa-regular fa-lightbulb"></i>
-                  <span>Demo</span>
+                <a class="button is-normal is-rounded is-dark" href="https://github.com/showlab/AUI/tree/main/AUI-Gym" target="_blank">
+                  <i class="button-icon fa-regular fa-compass"></i>
+                  <span>Benchmark</span>
                 </a>
               </span>
               <span class="link-block">
-                <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/yeliudev/VideoMind-Dataset" target="_blank">
-                  <i class="button-icon fa-regular fa-hourglass-half"></i>
-                  <span>Dataset</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/collections/yeliudev/videomind-67dd41f42c57f0e7433afb36" target="_blank">
-                  <i class="button-icon fa-regular fa-envelope-open"></i>
-                  <span>Checkpoints</span>
+                <a class="button is-normal is-rounded is-dark" href="#citation">
+                  <i class="button-icon fa-regular fa-bookmark"></i>
+                  <span>BibTeX</span>
                 </a>
               </span>
             </div>
@@ -107,9 +111,9 @@
         <div class="column is-four-fifths">
           <h2 class="title">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Videos, with their unique temporal dimension, demand precise grounded understanding, where answers are directly linked to visual, interpretable evidence. Despite significant breakthroughs in reasoning capabilities within Large Language Models, multi-modal reasoning - especially for videos - remains unexplored.</p>
-            <p>In this work, we introduce VideoMind, a novel video-language agent designed for temporal-grounded video understanding. VideoMind incorporates two key innovations: (i) We identify essential capabilities for video temporal reasoning and develop a role-based agentic workflow, including a planner for coordinating different roles, a grounder for temporal localization, a verifier to assess temporal interval accuracy, and an answerer for question-answering. (ii) To efficiently integrate these diverse roles, we propose a novel Chain-of-LoRA strategy, enabling seamless role-switching via lightweight LoRA adaptors while avoiding the overhead of multiple models, thus balancing efficiency and flexibility.</p>
-            <p>Extensive experiments on 14 public benchmarks, including 3 on grounded video question-answering (Grounded VideoQA), 6 on video temporal grounding (VTG), and 5 on general video question-answering (VideoQA), verify that our agent achieves state-of-the-art performance on diverse video understanding tasks, underscoring its effectiveness in advancing video agent and long-form temporal reasoning.</p>
+            <p>Computer-Use Agents (CUAs) are increasingly capable of operating complex graphical user interfaces, yet most digital environments remain tailored for humans. Aesthetic-heavy layouts, hidden interactions, and manually triggered workflows hinder agents from executing tasks efficiently.</p>
+            <p>We present <strong>AUI</strong>, a framework that rethinks UI creation for agents by pairing a coding-oriented <em>Coder</em> with an autonomous <em>CUA Judge</em>. The Coder iteratively designs interfaces while the CUA probes them through task-solving trajectories. AUI introduces the <strong>AUI-Gym</strong> benchmark spanning 52 applications across six domains and proposes the <strong>CUA Dashboard</strong>, a compact visualization that condenses multi-step rollouts into actionable feedback.</p>
+            <p>Across state-of-the-art proprietary and open Coders—and multiple CUAs—AUI substantially improves both functionality completeness and navigation success. Our agent-as-judge paradigm shifts interface design toward agent-native reliability and paves the way for scalable automatic GUI development.</p>
           </div>
         </div>
       </div>
@@ -120,8 +124,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-half">
-          <h2 class="title">What is VideoMind?</h2>
-          <img src="figures/teaser.jpg" alt="Teaser" data-zoom-image />
+          <h2 class="title">What is AUI?</h2>
+          <img src="figures/teaser.png" alt="AUI Teaser" data-zoom-image />
         </div>
       </div>
     </div>
@@ -131,8 +135,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title">Model Overview</h2>
-          <img src="figures/method.jpg" alt="Model Overview" data-zoom-image />
+          <h2 class="title">Coder&ndash;CUA Collaboration</h2>
+          <img src="figures/workflow.png" alt="AUI Framework" data-zoom-image />
         </div>
       </div>
     </div>
@@ -142,19 +146,17 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h3 class="title">Role-Specific Designs</h3>
+          <h3 class="title">Agent-Centric Revisions</h3>
         </div>
       </div>
       <div class="columns is-centered has-text-centered">
         <div class="column is-two-fifths">
-          <img src="figures/decoder.jpg" alt="Timestamp Decoder" data-zoom-image />
-          <div class="caption">Timestamp Decoder</div>
+          <img src="figures/coder_revision.png" alt="Coder Refinement" data-zoom-image />
+          <div class="caption">Coder as Designer: extend functionality from CUA feedback.</div>
         </div>
         <div class="column is-two-fifths">
-          <img src="figures/planner.jpg" alt="Planner" data-zoom-image />
-          <div class="caption">Planner</div>
-          <img src="figures/verifier.jpg" alt="Verifier" data-zoom-image />
-          <div class="caption">Verifier</div>
+          <img src="figures/cua_revision.png" alt="CUA Refinement" data-zoom-image />
+          <div class="caption">CUA as Judge: surface usability bottlenecks for agents.</div>
         </div>
       </div>
     </div>
@@ -164,14 +166,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title">Visualization</h2>
-          <img src="figures/vis.jpg" alt="Visualization" data-zoom-image />
+          <h2 class="title">CUA Dashboard</h2>
+          <img src="figures/dashboard.png" alt="CUA Dashboard" data-zoom-image />
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="citation">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -180,7 +182,7 @@
         </div>
       </div>
       <div class="columns is-centered">
-        <pre><code>@article{liu2025videomind,<br>  title={VideoMind: A Chain-of-LoRA Agent for Long Video Reasoning},<br>  author={Liu, Ye and Lin, Kevin Qinghong and Chen, Chang Wen and Shou, Mike Zheng},<br>  journal={arXiv preprint arXiv:2503.13444},<br>  year={2025}<br>}</code></pre>
+        <pre><code>@inproceedings{lin2025aui,<br>  title={Computer-Use Agents as Judges for Automatic GUI Design},<br>  author={Lin, Kevin Qinghong and Hu, Siyuan and Li, Linjie and Yang, Zhengyuan and Wang, Lijuan and Torr, Philip and Shou, Mike Zheng},<br>  booktitle={NeurIPS 2025 Workshop on Agents},<br>  year={2025}<br>}</code></pre>
       </div>
     </div>
   </section>
